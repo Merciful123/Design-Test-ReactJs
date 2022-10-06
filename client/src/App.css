@@ -1,95 +1,85 @@
-body {
-    background-color: rgb(232, 225, 225);
-}
-
-
-/*  Aligning main container */
-
-.main {
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    margin: auto;
-    border-radius: 5px;
-}
-
-
-/* Aligning row container that contains images */
-
-.row {
-    border-radius: 10px;
-    display: flex;
-    border: 1px solid black;
-    width: 800px;
-    margin: 0 auto;
-    margin-top: 10px;
-    position: relative;
-}
-
-
-/* Positioning Images */
-
-.image {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    float: right;
-}
-
-.img1 {
-    border-radius: 10px 0 0 10px;
-}
-
-.img3 {
-    border-radius: 0 10px 10px 0;
-}
-
-
-/* Positioning Text on images */
-
-.row>div>div {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    color: white;
-    font-family: sans-serif;
-    /* z-index set to make it appear on top */
-    z-index: 1000;
-    display: flex;
-}
-
-.fa-solid {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-family: sans-serif;
-    /* z-index set less than image to hide it */
-    z-index: 10;
-}
-
-img {
-    height: 200px;
-    width: 200px;
-    transition: width 1s;
-    z-index: 100;
-    position: relative;
-}
-
-
-/* Setting default width of last image  */
-
-.img3 {
-    box-sizing: border-box;
-    width: 400px;
-}
-
-
-/* Making hover effect on images. */
-
-img:hover {
-    box-sizing: border-box;
-    width: 400px;
-    /* z-index now less than icon to make icon appear on top of image */
-    z-index: 0;
-}
+          * {
+              box-sizing: border-box;
+          }
+          
+          body {
+              background-color: rgb(232, 225, 225);
+          }
+          /*  Aligning main container */
+          
+          .main {
+              display: flex;
+              flex-direction: column;
+              width: 800px;
+              margin: auto;
+              border-radius: 5px;
+          }
+          /* Aligning row container that contains images */
+          
+          .row {
+              border-radius: 10px;
+              display: flex;
+              border: 1px solid black;
+              width: 800px;
+              margin: 0 auto;
+              margin-top: 10px;
+              position: relative;
+          }
+          /* Positioning Images */
+          
+          .image {
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              height: 200px;
+              float: right;
+          }
+          /*Border radius of first and second images  */
+          
+          .img1 {
+              border-radius: 10px 0 0 10px;
+          }
+          
+          .img3 {
+              border-radius: 0 10px 10px 0;
+          }
+          /* Positioning Text on images */
+          
+          .image-item {
+              position: absolute;
+              top: 10px;
+              left: 15px;
+              color: white;
+              font-family: sans-serif;
+              /* z-index set to make it appear on top */
+              z-index: 1000;
+              display: flex;
+          }
+          
+          .fa-solid {
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              color: white;
+              font-family: sans-serif;
+              /* z-index set less than image to hide it */
+              z-index: 10;
+          }
+          
+          img {
+              height: 200px;
+              width: 200px;
+              transition: width .5s;
+              z-index: 100;
+              position: relative;
+          }
+          /* Making hover effect on images. */
+          
+          img:hover {
+              /* box-sizing: border-box; */
+              width: 400px !important;
+              padding: 0;
+              margin: 0;
+              /* z-index now less than icon to make icon appear on top of image */
+              z-index: 0;
+          }
