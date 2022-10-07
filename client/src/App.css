@@ -7,45 +7,63 @@
           }
           /*  Aligning main container */
           
-          .main {
+          .container {
               display: flex;
               flex-direction: column;
               width: 800px;
-              margin: auto;
-              border-radius: 5px;
+              margin: 50px auto;
           }
           /* Aligning row container that contains images */
+          
+          h2 {
+              margin: 10px auto;
+              align-items: flex-start;
+              justify-content: flex-start;
+              width: 800px;
+          }
           
           .row {
               border-radius: 10px;
               display: flex;
               border: 1px solid black;
               width: 800px;
-              margin: 0 auto;
               margin-top: 10px;
-              position: relative;
+              overflow: hidden;
           }
           /* Positioning Images */
           
           .image {
               position: relative;
-              overflow: hidden;
+              /* Below OVERFLOW-HIDDEDN was the bug that didn't realise earlier, NOW I FIXED IT.  */
+              /* overflow: hidden; */
               display: flex;
               height: 200px;
-              float: right;
           }
-          /*Border radius of first and second images  */
+          
+          img {
+              height: 200px;
+              width: 200px;
+              transition: width .1s;
+              z-index: 100;
+              position: relative;
+              transition-timing-function: ease-in;
+          }
+          /*Border radius of first and last image  */
           
           .img1 {
               border-radius: 10px 0 0 10px;
+              /* z-index: 100; */
           }
           
           .img3 {
               border-radius: 0 10px 10px 0;
+              /* box-sizing: content-box; */
+              width: 400px;
+              /* z-index: 100; */
           }
           /* Positioning Text on images */
           
-          .image-item {
+          .image-text {
               position: absolute;
               top: 10px;
               left: 15px;
@@ -63,23 +81,12 @@
               color: white;
               font-family: sans-serif;
               /* z-index set less than image to hide it */
-              z-index: 10;
-          }
-          
-          img {
-              height: 200px;
-              width: 200px;
-              transition: width .5s;
-              z-index: 100;
-              position: relative;
+              z-index: 2;
           }
           /* Making hover effect on images. */
           
           img:hover {
-              /* box-sizing: border-box; */
-              width: 400px !important;
-              padding: 0;
-              margin: 0;
+              width: 400px;
               /* z-index now less than icon to make icon appear on top of image */
-              z-index: 0;
+              z-index: 1;
           }
